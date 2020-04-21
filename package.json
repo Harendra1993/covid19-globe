@@ -22,6 +22,7 @@
     "react-dom": "^16.12.0",
     "react-globe": "^4.0.0",
     "react-helmet": "^6.0.0",
+    "react-spring": "^8.0.27",
     "three": "^0.115.0"
   },
   "devDependencies": {

@@ -2,9 +2,30 @@ const { createProxyMiddleware } = require("http-proxy-middleware") //v1.x.x
 
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Default Starter`,
-    description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
-    author: `@gatsbyjs`,
+    title: `Covid Globe`,
+    description: `A visualization of the Corona Virus from CoronaTab Api.`,
+    author: `harendra`,
+    cameraOptions: {
+        enableZoom: false,
+    },
+    focusOptions: {
+        enableDefocus: false,
+    },
+    globeOptions: {
+        cloudsSpeed: 0.2,
+        cloudsOpacity: 0.05,
+        glowCoefficient: 0.1,
+        glowColor: '#fff9e6',
+        glowPower: 5,
+        glowRadiusScale: 0.2,
+        texture: 'https://harendra1993.github.io/assets/images/earth.jpg',
+    },
+    lightOptions: {
+        ambientLightColor: '#babc95',
+        ambientLightIntensity: 1,
+        pointLightIntensity: 3,
+        pointLightPositionRadiusScales: [-1, 1.5, -2.5],
+    }
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
