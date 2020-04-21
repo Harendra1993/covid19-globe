@@ -1,3 +1,5 @@
+const { createProxyMiddleware } = require("http-proxy-middleware") //v1.x.x
+
 module.exports = {
   siteMetadata: {
     title: `Gatsby Default Starter`,
@@ -31,4 +33,17 @@ module.exports = {
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,
   ],
+
+  developMiddleware: app => {
+    app.use(
+      "/api/",
+      createProxyMiddleware({
+        changeOrigin: true,
+        target: "https://api.coronatab.app/",
+        pathRewrite: {
+          "/api/": "",
+        },
+      })
+    )
+  },
 }
