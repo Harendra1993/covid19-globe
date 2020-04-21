@@ -1,15 +1,17 @@
 import React from "react"
 import ReactGlobe from 'react-globe';
 import { useStaticQuery, graphql } from "gatsby"
+import {useStateValue} from "../context/StateContextProvider"
 
 import Blur from './ui/blur';
 
 const Globe = () => {
-    // const [state, dispatch] = useStateValue();
-    // const { focusedMarker, start } = state;
-    // const markers = start ? state.markers : [];
-    // const focus =
-    //     focusedMarker !== undefined ? focusedMarker.coordinates : undefined;
+     const [state, dispatch] = useStateValue();
+    //  const { focusedMarker, start } = state;
+    //  const markers = start ? state.markers : [];
+    //  const focus =focusedMarker !== undefined ? focusedMarker.coordinates : undefined;
+console.log(state)
+    
 
     const {site} = useStaticQuery(graphql`
         query SiteGlobeOptionsQuery {
@@ -42,6 +44,7 @@ const Globe = () => {
         const { cameraOptions, focusOptions, globeOptions, lightOptions } =site.siteMetadata;
 
     return (
+
         <Blur className="globe" config={{ friction: 150 }} shown={true}>
             <ReactGlobe
                 cameraOptions={cameraOptions}
@@ -56,6 +59,7 @@ const Globe = () => {
                 // }
             />
         </Blur>
+     
     );
 }
 
