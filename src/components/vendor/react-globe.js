@@ -77,7 +77,7 @@ var defaultGlobeOptions = {
     glowColor: '#d1d1d1',
     glowPower: 3,
     glowRadiusScale: 0.2,
-    texture: 'https://raw.githubusercontent.com/chrisrzhou/react-globe/master/textures/globe.jpg',
+    texture: 'https://harendra1993.github.io/assets/images/earth.jpg',
 };
 var defaultLightOptions = {
     ambientLightColor: 'white',
@@ -696,7 +696,8 @@ function useResize(mountRef, initialSize) {
         var height = 0;
         if (initialSize) {
             // Use initialSize if it is provided
-            width = initialSize[0], height = initialSize[1];
+            width = initialSize[0];
+            height = initialSize[1];
         }
         else {
             // Use parentElement size if resized has not updated

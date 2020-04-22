@@ -1,5 +1,5 @@
 import React from "react"
-import ReactGlobe from 'react-globe';
+import ReactGlobe from './vendor/react-globe';
 import { useStaticQuery, graphql } from "gatsby"
 import { useStateValue } from "../context/StateContextProvider"
 
