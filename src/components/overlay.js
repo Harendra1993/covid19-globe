@@ -1,7 +1,7 @@
 import moment from 'moment';
 import React, { useState } from 'react';
 
-import { getTop10Markers } from '../context/selectors';
+import { getTop5Markers } from '../context/selectors';
 import { useStateValue } from "../context/StateContextProvider"
 // import About from './About';
 import Blur from './ui/blur';
@@ -11,7 +11,7 @@ function Overlay() {
     const [state, dispatch] = useStateValue();
     const [showAbout, setShowAbout] = useState(false);
     const { lastUpdated, start, focusedMarker } = state;
-    const top10Markers = getTop10Markers(state);
+    const top5Markers = getTop5Markers(state);
     return showAbout ? (
         // <About onHide={() => setShowAbout(false)} shown={showAbout} />
         <div></div>
@@ -40,7 +40,7 @@ function Overlay() {
                     </div> */}
                 </div>
                 <div className="content">
-                    TOP 10 AFFACTED REGIONS
+                    TOP 5 AFFACTED REGIONS
         {top10Markers.map(
                     (marker) => {
                         return (

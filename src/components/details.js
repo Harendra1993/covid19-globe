@@ -5,12 +5,6 @@ import { useStateValue } from '../context/StateContextProvider';
 import Blur from './ui/blur';
 import Button from './ui/button';
 
-function getSearchURL(city, country) {
-    const formattedQuery = `${encodeURIComponent(city)}, ${encodeURIComponent(
-        country,
-    )} `.replace(/(%20| )/g, '+');
-    return `https://www.google.com/search?q=${formattedQuery}`;
-}
 
 function Details() {
     const [state, dispatch] = useStateValue();
@@ -20,7 +14,6 @@ function Details() {
         return <div />;
     }
     const { city, countryCode, countryName, value, dataSource } = focusedMarker;
-    const url = getSearchURL(city, countryName);
     // const relatedTopics = state.relatedTopics[countryCode];
     // console.log(relatedTopics);
     return (
