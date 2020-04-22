@@ -1,7 +1,7 @@
 import moment from 'moment';
 import React, { useState } from 'react';
 
-import { getTop5Markers } from '../context/selectors';
+import { getTop10Markers } from '../context/selectors';
 import { useStateValue } from "../context/StateContextProvider"
 // import About from './About';
 import Blur from './ui/blur';
@@ -11,15 +11,15 @@ function Overlay() {
     const [state, dispatch] = useStateValue();
     const [showAbout, setShowAbout] = useState(false);
     const { lastUpdated, start, focusedMarker } = state;
-    const top5Markers = getTop5Markers(state);
+    const top10Markers = getTop10Markers(state);
     return showAbout ? (
         // <About onHide={() => setShowAbout(false)} shown={showAbout} />
         <div></div>
     ) : (
             <Blur
                 className="overlay"
-                config={{ friction: 50 }}
-                shown={start && focusedMarker}>
+                config={{ duration: 1000 }}
+                shown={start && !focusedMarker}>
                 <div className="header">
                     <div>
                         <h2>Covid 19 Globe</h2>
@@ -40,8 +40,8 @@ function Overlay() {
                     </div> */}
                 </div>
                 <div className="content">
-                    TOP 5 AFFACTED REGIONS
-        {top5Markers.map(
+                    TOP 10 AFFACTED REGIONS
+        {top10Markers.map(
                     (marker) => {
                         return (
                             <a key={marker.name} href="#">
@@ -49,7 +49,7 @@ function Overlay() {
                                     onClick={() =>
                                         dispatch({ type: "Focus", payload: marker })
                                     }>
-                                    {marker.name}
+                                    {marker.name} ({marker.value})
                                 </h2>
                             </a>
                         );

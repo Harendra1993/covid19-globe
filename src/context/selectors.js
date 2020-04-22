@@ -12,9 +12,9 @@ export function getRandomMarker(state) {
     return filteredMarkers[Math.floor(Math.random() * filteredMarkers.length)];
 }
 
-export function getTop5Markers(state) {
+export function getTop10Markers(state) {
     return state.markers
         .concat()
         .sort((a, b) => b.value - a.value)
-        .slice(0, 5);
+        .slice(0, 10);
 }

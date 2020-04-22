@@ -7,7 +7,7 @@ import Button from './ui/button';
 function Intro() {
     const [{ start }, dispatch] = useStateValue();
     return (
-        <Blur className="intro" config={{ friction: 50 }} shown={!start}>
+        <Blur className="intro" config={{ duration: 3000 }} shown={!start}>
             <h1>Covid 19 Globe</h1>
             <p>
                 Visualizing <b>Corona Virus Desease </b> Data
