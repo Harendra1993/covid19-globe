@@ -5,7 +5,7 @@ import { getTop5Markers } from '../context/selectors';
 import { useStateValue } from "../context/StateContextProvider"
 // import About from './About';
 import Blur from './ui/blur';
-// import Link from './ui/Link';
+import EnternalLink from './ui/external-link';
 
 function Overlay() {
     const [state, dispatch] = useStateValue();
@@ -24,9 +24,9 @@ function Overlay() {
                     <div>
                         <h2>Covid 19 Globe</h2>
                         <div className="overlay-subtitle">
-                            Visualizing <b>Corona Virus Desease </b> Data
-                         {/* with{' '}
-                            <Link value="REACT_GLOBE_GITHUB" label="react-globe" /> */}
+                            Visualizing <b>Corona Virus Desease </b> Data with{' '}
+                            <EnternalLink value="REACT_GLOBE" label="react-globe" /> and{' '}
+                            <EnternalLink value="CRONA_TAB" label="corona-tab" />
                         </div>
                     </div>
                     {/* <div>
