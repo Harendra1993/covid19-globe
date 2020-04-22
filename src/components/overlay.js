@@ -41,7 +41,7 @@ function Overlay() {
                 </div>
                 <div className="content">
                     TOP 5 AFFACTED REGIONS
-        {top10Markers.map(
+        {top5Markers.map(
                     (marker) => {
                         return (
                             <a key={marker.city} href="#">
