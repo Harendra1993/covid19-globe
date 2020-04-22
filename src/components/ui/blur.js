@@ -1,5 +1,5 @@
 import React from 'react';
-import { animated, SpringConfig, useTransition } from 'react-spring';
+import { animated, useTransition } from 'react-spring';
 
 
 function Blur({ children, className, config, shown }) {

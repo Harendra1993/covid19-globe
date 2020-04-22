@@ -1,32 +1,29 @@
-import React,{useEffect} from "react"
+import React, { useEffect } from "react"
 import PropTypes from "prop-types"
-import { useStaticQuery, graphql } from "gatsby"
 import axios from "axios";
-import {useStateValue} from "../context/StateContextProvider"
+import { useStateValue } from "../context/StateContextProvider"
 
-// import Header from "./header"
 import "./layout.scss"
 
 const Layout = ({ children }) => {
-  const [state, dispatch] = useStateValue();
+  const [dispatch] = useStateValue();
 
   useEffect(() => {
     axios.get('/api/places?typeId=region')
-    .then(function (response) {
-      // handle success
-      dispatch({ type: "Markers", payload: response.data })
-    });
-  }, []);
+      .then(function ({ data }) {
+        // handle success
+        const markers = data.data.map(x => {
+          const marker = {};
 
-  const data = useStaticQuery(graphql`
-    query SiteTitleQuery {
-      site {
-        siteMetadata {
-          title
-        }
-      }
-    }
-  `)
+          marker.coordinates = (x.location) ? x.location.coordinates.slice().reverse() : [];
+          marker.value = x.latestData.cases;
+          marker.id = x.id;
+          marker.latestData = x.latestData;
+          return marker;
+        });
+        dispatch({ type: "Markers", payload: markers })
+      });
+  }, [dispatch]);
 
   return (
     <>
