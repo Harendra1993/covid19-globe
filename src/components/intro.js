@@ -13,7 +13,7 @@ function Intro() {
             <p>
                 Visualizing <b>Corona Virus Desease </b> Data with{' '}
                 <EnternalLink value="REACT_GLOBE" label="react-globe" /> and{' '}
-                <EnternalLink value="CRONA_TAB" label="corona-tab" />
+                <EnternalLink value="CRONA_TAB" label="corona-tab-api" />
             </p>
             <Button
                 label="Explore"
