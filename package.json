@@ -1,9 +1,9 @@
 {
-  "name": "gatsby-starter-default",
+  "name": "covid-19-globe",
   "private": true,
-  "description": "A simple starter to get up and developing quickly with Gatsby",
+  "description": "A visualization of the Corona Virus using React Globe CoronaTab Api.",
   "version": "0.1.0",
-  "author": "Kyle Mathews <mathews.kyle@gmail.com>",
+  "author": "Harendra Thind <harendraindia@gmail.com>",
   "dependencies": {
     "axios": "^0.19.2",
     "gatsby": "^2.20.25",
@@ -29,7 +29,10 @@
     "prettier": "2.0.4"
   },
   "keywords": [
-    "gatsby"
+    "covid",
+    "covid 19",
+    "corona virus",
+    "corona virus visualization"
   ],
   "license": "MIT",
   "scripts": {

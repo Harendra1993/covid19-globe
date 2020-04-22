@@ -2,9 +2,9 @@ const { createProxyMiddleware } = require("http-proxy-middleware") //v1.x.x
 
 module.exports = {
   siteMetadata: {
-    title: `Covid Globe`,
-    description: `A visualization of the Corona Virus from CoronaTab Api.`,
-    author: `harendra`,
+    title: `Covid 19 Globe`,
+    description: `A visualization of the Corona Virus using React Globe CoronaTab Api.`,
+    author: `HarendraThind`,
     cameraOptions: {
         enableZoom: false,
     },
@@ -12,7 +12,7 @@ module.exports = {
         enableDefocus: false,
     },
     globeOptions: {
-        cloudsSpeed: 0.2,
+        cloudsSpeed: 0.1,
         cloudsOpacity: 0.05,
         glowCoefficient: 0.1,
         glowColor: '#fff9e6',
@@ -23,7 +23,7 @@ module.exports = {
     lightOptions: {
         ambientLightColor: '#babc95',
         ambientLightIntensity: 1,
-        pointLightIntensity: 3,
+        pointLightIntensity: 1,
         pointLightPositionRadiusScales: [-1, 1.5, -2.5],
     }
   },
