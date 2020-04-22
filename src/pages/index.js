@@ -4,6 +4,7 @@ import React from "react"
 import Layout from "../components/layout"
 import Globe from "../components/globe";
 import Intro from "../components/intro";
+import Overlay from "../components/overlay";
 import SEO from "../components/seo"
 
 const IndexPage = () => {
@@ -14,6 +15,7 @@ const IndexPage = () => {
       <SEO title="Home" />
       <Globe />
       <Intro />
+      <Overlay />
     </Layout >
   )
 }
