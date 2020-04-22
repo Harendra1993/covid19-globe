@@ -1,8 +1,9 @@
 import React from "react"
 
 // import { Link } from "gatsby"
-import Globe from "../components/globe";
 import Layout from "../components/layout"
+import Globe from "../components/globe";
+import Intro from "../components/intro";
 import SEO from "../components/seo"
 
 const IndexPage = () => {
@@ -12,6 +13,7 @@ const IndexPage = () => {
     < Layout >
       <SEO title="Home" />
       <Globe />
+      <Intro />
     </Layout >
   )
 }

@@ -19,6 +19,9 @@ const Layout = ({ children }) => {
           marker.value = x.latestData.cases;
           marker.id = x.id;
           marker.latestData = x.latestData;
+          marker.dataSource = x.dataSource;
+          marker.parentId = x.parentId;
+          marker.typeId = x.typeId;
           return marker;
         });
         dispatch({ type: "Markers", payload: markers })
