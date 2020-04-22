@@ -44,12 +44,12 @@ function Overlay() {
         {top10Markers.map(
                     (marker) => {
                         return (
-                            <a key={marker.name} href="#">
+                            <a key={marker.city} href="#">
                                 <h2
                                     onClick={() =>
                                         dispatch({ type: "Focus", payload: marker })
                                     }>
-                                    {marker.name} ({marker.value})
+                                    {marker.city} ({marker.value})
                                 </h2>
                             </a>
                         );

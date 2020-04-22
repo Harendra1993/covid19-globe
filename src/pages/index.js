@@ -5,6 +5,7 @@ import Layout from "../components/layout"
 import Globe from "../components/globe";
 import Intro from "../components/intro";
 import Overlay from "../components/overlay";
+import Details from "../components/details";
 import SEO from "../components/seo"
 
 const IndexPage = () => {
@@ -16,6 +17,7 @@ const IndexPage = () => {
       <Globe />
       <Intro />
       <Overlay />
+      <Details />
     </Layout >
   )
 }

@@ -1,10 +1,9 @@
 import React from 'react';
 
-import { getRandomMarker } from '../state/selectors';
-import { useStateValue } from '../state/StateProvider';
-import { ActionType } from '../types';
-import Blur from './ui/Blur';
-import Button from './ui/Button';
+import { getRandomMarker } from '../context/selectors';
+import { useStateValue } from '../context/StateContextProvider';
+import Blur from './ui/blur';
+import Button from './ui/button';
 
 function getSearchURL(city, country) {
     const formattedQuery = `${encodeURIComponent(city)}, ${encodeURIComponent(
@@ -15,26 +14,26 @@ function getSearchURL(city, country) {
 
 function Details() {
     const [state, dispatch] = useStateValue();
-    const { keyword, start, focusedMarker } = state;
+    const { start, focusedMarker } = state;
     const randomMarker = getRandomMarker(state);
     if (!focusedMarker) {
         return <div />;
     }
-    const { city, countryCode, countryName, value } = focusedMarker;
-    const url = getSearchURL(city, countryName, keyword);
-    const relatedTopics = state.relatedTopics[countryCode];
-    console.log(relatedTopics);
+    const { city, countryCode, countryName, value, dataSource } = focusedMarker;
+    const url = getSearchURL(city, countryName);
+    // const relatedTopics = state.relatedTopics[countryCode];
+    // console.log(relatedTopics);
     return (
         <Blur className="details" config={{ duration: 1000 }} shown={start}>
             <div className="header">
                 <Button
                     label="Back to globe"
-                    onClick={() => dispatch({ type: ActionType.Focus })}
+                    onClick={() => dispatch({ type: "Focus" })}
                 />
                 <Button
                     label="Random City"
                     onClick={() =>
-                        dispatch({ type: ActionType.Focus, payload: randomMarker })
+                        dispatch({ type: "Focus", payload: randomMarker })
                     }
                 />
             </div>
@@ -42,7 +41,8 @@ function Details() {
                 <h2>
                     {city}, {countryName} ({value})
         </h2>
-                <div className="details-content">
+
+                {/* <div className="details-content">
                     RELATED TOPICS
           {relatedTopics.map(
                     ({ topic, link }) => {
@@ -57,9 +57,9 @@ function Details() {
                         );
                     },
                 )}
-                </div>
-                <a href={url} rel="noopener noreferrer" target="_blank">
-                    <Button label="View search results" />
+                </div> */}
+                <a href={dataSource} rel="noopener noreferrer" target="_blank">
+                    <Button label="Verify Data Source" />
                 </a>
             </div>
         </Blur>

@@ -22,7 +22,8 @@ const Layout = ({ children }) => {
           marker.dataSource = x.dataSource;
           marker.parentId = x.parentId;
           marker.typeId = x.typeId;
-          marker.name = x.name;
+          marker.city = x.name;
+          marker.countryCode = x.alpha2code;
           return marker;
         });
         dispatch({ type: "Markers", payload: markers })
