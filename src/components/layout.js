@@ -6,7 +6,7 @@ import { useStateValue } from "../context/StateContextProvider"
 import "./layout.scss"
 
 const Layout = ({ children }) => {
-  const [dispatch] = useStateValue();
+  const [state, dispatch] = useStateValue();
 
   useEffect(() => {
     axios.get('/api/places?typeId=region')
@@ -24,6 +24,7 @@ const Layout = ({ children }) => {
         dispatch({ type: "Markers", payload: markers })
       });
   }, [dispatch]);
+
 
   return (
     <>
