@@ -6,26 +6,26 @@ module.exports = {
     description: `A visualization of the Corona Virus using React Globe CoronaTab Api.`,
     author: `HarendraThind`,
     cameraOptions: {
-        enableZoom: false,
+      enableZoom: false,
     },
     focusOptions: {
-        enableDefocus: false,
+      enableDefocus: false,
     },
     globeOptions: {
-        cloudsSpeed: 0.1,
-        cloudsOpacity: 0.05,
-        glowCoefficient: 0.1,
-        glowColor: '#fff9e6',
-        glowPower: 5,
-        glowRadiusScale: 0.2,
-        texture: 'https://harendra1993.github.io/assets/images/earth.jpg',
+      cloudsSpeed: 0.1,
+      cloudsOpacity: 0.05,
+      glowCoefficient: 0.1,
+      glowColor: "#fff9e6",
+      glowPower: 5,
+      glowRadiusScale: 0.2,
+      texture: "https://harendra1993.github.io/assets/images/earth.jpg",
     },
     lightOptions: {
-        ambientLightColor: '#babc95',
-        ambientLightIntensity: 1,
-        pointLightIntensity: 1,
-        pointLightPositionRadiusScales: [-1, 1.5, -2.5],
-    }
+      ambientLightColor: "#babc95",
+      ambientLightIntensity: 1,
+      pointLightIntensity: 1,
+      pointLightPositionRadiusScales: [-1, 1.5, -2.5],
+    },
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
@@ -44,13 +44,10 @@ module.exports = {
         name: `gatsby-starter-default`,
         short_name: `starter`,
         start_url: `/`,
-        background_color: `#663399`,
-        theme_color: `#663399`,
-        display: `minimal-ui`,
-        icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
+        icon: `src/images/icon.png`, // This path is relative to the root of the site.
       },
     },
-    `gatsby-plugin-sass`
+    `gatsby-plugin-sass`,
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,

@@ -7,9 +7,13 @@
 // You can delete this file if you're not using it
 
 import React from "react"
-import { initialState, reducer } from './src/context/';
+import { initialState, reducer } from "./src/context/"
 import StateContextProvider from "./src/context/StateContextProvider"
 
 export const wrapRootElement = ({ element }) => {
-  return <StateContextProvider initialState={initialState} reducer={reducer}>{element}</StateContextProvider>
+  return (
+    <StateContextProvider initialState={initialState} reducer={reducer}>
+      {element}
+    </StateContextProvider>
+  )
 }

@@ -7,6 +7,7 @@ sans-serif;
 $body-font-size: 16px;
 $h1-font-size: 48px;
 $h2-font-size: 32px;
+$h3-font-size: 16px;
 $header-font-color: #ffffff;
 $header-font-family: Ovo,
 serif;
@@ -57,11 +58,12 @@ body {
   }
 
   h1,
-  h2 {
+  h2,h3 {
     color: $header-font-color;
     font-family: $header-font-family;
     margin: $spacing 0;
   }
+  
 
   h1 {
     font-size: $h1-font-size;
@@ -76,6 +78,14 @@ body {
 
     @media only screen and (max-width: $media-phone-max-width) {
       font-size: $h2-font-size * 0.5;
+    }
+  }
+
+  h3 {
+    font-size: $h3-font-size;
+
+    @media only screen and (max-width: $media-phone-max-width) {
+      font-size: $h3-font-size * 0.5;
     }
   }
 }
@@ -105,7 +115,8 @@ body {
 }
 
 .content {
-  max-width: 30vw;
+  max-width: 40vw;
+  min-width: 30vw;
   position: absolute;
   right: 10%;
   top: 50%;
@@ -167,8 +178,8 @@ body {
   @extend .fixed;
   padding: $spacing;
   background: rgba(0, 0, 0, 0.4);
-
   .details-content {
+    min-width: 600px;
     align-items: flex-start;
     display: flex;
     flex-direction: column;
@@ -188,5 +199,40 @@ body {
     margin: 0 auto;
     max-width: 600px;
     text-align: center;
+  }
+}
+
+
+/* Float four columns side by side */
+.column {
+  float: left;
+  min-width: 22%;
+  margin-right: 5px;
+  margin-top: -15px;;
+}
+
+/* Remove extra left and right margins, due to padding in columns */
+.row {margin: 0;}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Style the counter cards */
+.card {
+  text-align: center;
+  background-color: transparent;
+  color: white;
+}
+
+/* Responsive columns - one column layout (vertical) on small screens */
+@media screen and (max-width: 600px) {
+  .column {
+    width: 100%;
+    display: block;
+    margin-bottom: 20px;
   }
 }
