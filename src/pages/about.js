@@ -1,14 +1,15 @@
 import React from 'react';
 
-import Blur from './blur';
-import Button from './button';
-import ExternalLink from './external-link';
+import Layout from "../components/layout"
+import Blur from '../components/ui/blur';
+import Button from '../components/ui/button';
+import ExternalLink from '../components/ui/external-link';
 
 
-function About({ onHide, shown }){
-    console.log(shown)
+function About(){
   return (
-    <Blur className="about" config={{ friction: 150 }}  shown={shown}>
+    <Layout>
+    <Blur className="about" config={{ friction: 1000 }} >
       <div className="about-content">
         <h2>About</h2>
         <p>
@@ -19,9 +20,10 @@ function About({ onHide, shown }){
           Globe visualizations are rendered using the{' '}
           <ExternalLink value="REACT_GLOBE_GITHUB" label="react-globe" /> component.
         </p>
-        <Button label="Back" onClick={onHide} />
+        <Button label="Back"  />
       </div>
     </Blur>
+    </Layout>
   );
 }
 

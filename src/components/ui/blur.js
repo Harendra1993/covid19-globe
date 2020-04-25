@@ -6,7 +6,7 @@ function Blur({ children, className, config, shown }) {
     const transitions = useTransition(shown, null, {
         from: { opacity: 0, filter: 'blur(20px)' },
         enter: { opacity: 1, filter: 'blur(0)' },
-        leave: { opacity: 0, filter: 'blur(20px)' },
+        leave: { opacity: 0, filter: 'blur(0)' },
         config,
     });
     return transitions.map(

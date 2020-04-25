@@ -1,23 +1,19 @@
-import moment from 'moment';
 import React, { useState } from 'react';
 
 import { getTop5Markers } from '../context/selectors';
 import { useStateValue } from "../context/StateContextProvider"
-import About from './ui/about';
 import Blur from './ui/blur';
 import EnternalLink from './ui/external-link';
 
 function Overlay() {
     const [state, dispatch] = useStateValue();
     const [showAbout, setShowAbout] = useState(false);
-    const { lastUpdated, start, focusedMarker } = state;
+    const { start, focusedMarker } = state;
     const top5Markers = getTop5Markers(state);
-    return showAbout ? (
-        <About onHide={() => setShowAbout(false)} shown={showAbout} />
-    ) : (
+    return  (
             <Blur
                 className="overlay"
-                config={{ duration: 1000 }}
+                config={{ duration: 100 }}
                 shown={start && !focusedMarker}>
                 <div className="header">
                     <div>
@@ -56,7 +52,7 @@ function Overlay() {
                 )}
                 </div>
                 <div className="footer">
-                    {/* Updated on {moment(lastUpdated).format('MMM D, YYYY')} */}
+                    
                 </div>
             </Blur>
         );
