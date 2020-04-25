@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 
 import { getTop5Markers } from '../context/selectors';
 import { useStateValue } from "../context/StateContextProvider"
+import About from './ui/about';
 import Blur from './ui/blur';
 import EnternalLink from './ui/external-link';
 
@@ -10,10 +11,12 @@ function Overlay() {
     const [showAbout, setShowAbout] = useState(false);
     const { start, focusedMarker } = state;
     const top5Markers = getTop5Markers(state);
-    return  (
+    return showAbout ? (
+        <About onHide={() => setShowAbout(false)} shown={showAbout} />
+    ) : (
             <Blur
                 className="overlay"
-                config={{ duration: 100 }}
+                config={{ duration: 1000 }}
                 shown={start && !focusedMarker}>
                 <div className="header">
                     <div>
@@ -35,7 +38,7 @@ function Overlay() {
                     </div>
                 </div>
                 <div className="content">
-                    TOP 5 AFFACTED REGIONS
+                    TOP 5 AFFACTED Countries
         {top5Markers.map(
                     (marker) => {
                         return (
@@ -52,7 +55,6 @@ function Overlay() {
                 )}
                 </div>
                 <div className="footer">
-                    
                 </div>
             </Blur>
         );
