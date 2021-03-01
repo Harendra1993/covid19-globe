@@ -24,7 +24,7 @@
     "react-globe": "^4.0.0",
     "react-helmet": "^6.0.0",
     "react-spring": "^8.0.27",
-    "three": "^0.109.0"
+    "three": "^0.125.0"
   },
   "devDependencies": {
     "prettier": "2.0.4"
